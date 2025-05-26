@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PA2_BE
 {
-    internal class PacientesBE
+    public class PacientesBE
     {
         public int id_pac { get; set; }
         public string nom_pac { get; set; }
@@ -23,7 +23,7 @@ namespace PA2_BE
         public string comentarios_pac { get; set; }
         public string correo_pac { get; set; }
         public string foto_pac { get; set; }
-        public DateTime fecha_at_seg_pac { get; set; }
+        public DateTime fecha_af_seg_pac { get; set; }
         public int id_seguro { get; set; }
         public string cobertura_pac { get; set; }
         public string nro_poliza_pac { get; set; }
