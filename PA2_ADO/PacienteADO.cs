@@ -9,7 +9,7 @@ using PA2_BE;
 
 namespace PA2_ADO
 {
-    internal class PacienteADO
+    public class PacienteADO
     {
         ConexionADO MiConexion = new ConexionADO();
         SqlConnection cnx = new SqlConnection();
@@ -26,7 +26,7 @@ namespace PA2_ADO
                 cnx.ConnectionString = MiConexion.GetCnx();
                 cmd.Connection = cnx;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "usp_Listar_Pacientes";
+                cmd.CommandText = "sp_ListarPacientes";
                 cmd.Parameters.Clear();
                 SqlDataAdapter ada = new SqlDataAdapter(cmd);
                 ada.Fill(dts, "Pacientes");
@@ -101,7 +101,7 @@ namespace PA2_ADO
             }
 
         }
-        public Boolean InsertarProducto(PacientesBE objPacienteBE)
+        public Boolean InsertarPaciente(PacientesBE objPacienteBE)
         {
 
             try
@@ -150,7 +150,7 @@ namespace PA2_ADO
 
             }
         }
-        public Boolean ActualizarProducto(PacientesBE objPacienteBE)
+        public Boolean ActualizarPaciente(PacientesBE objPacienteBE)
         {
             try
             {
@@ -203,7 +203,7 @@ namespace PA2_ADO
 
         }
 
-        public Boolean EliminarProducto(String id_Pac)
+        public Boolean EliminarPaciente(String id_Pac)
         {
 
 

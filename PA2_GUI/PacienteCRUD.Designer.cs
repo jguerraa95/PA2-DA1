@@ -35,6 +35,8 @@
             BtnActualizar = new Button();
             BtnEliminar = new Button();
             BtnCerrar = new Button();
+            LblRegistros = new Label();
+            LblTextoRegistro = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -45,6 +47,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(983, 392);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // LblDni
             // 
@@ -99,11 +102,31 @@
             BtnCerrar.Text = "Cerrar";
             BtnCerrar.UseVisualStyleBackColor = true;
             // 
+            // LblRegistros
+            // 
+            LblRegistros.BorderStyle = BorderStyle.FixedSingle;
+            LblRegistros.Location = new Point(132, 480);
+            LblRegistros.Name = "LblRegistros";
+            LblRegistros.Size = new Size(100, 23);
+            LblRegistros.TabIndex = 7;
+            LblRegistros.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // LblTextoRegistro
+            // 
+            LblTextoRegistro.AutoSize = true;
+            LblTextoRegistro.Location = new Point(31, 484);
+            LblTextoRegistro.Name = "LblTextoRegistro";
+            LblTextoRegistro.Size = new Size(96, 15);
+            LblTextoRegistro.TabIndex = 8;
+            LblTextoRegistro.Text = "Registros totales:";
+            // 
             // PacienteCRUD
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1007, 535);
+            Controls.Add(LblTextoRegistro);
+            Controls.Add(LblRegistros);
             Controls.Add(BtnCerrar);
             Controls.Add(BtnEliminar);
             Controls.Add(BtnActualizar);
@@ -113,6 +136,7 @@
             Controls.Add(dataGridView1);
             Name = "PacienteCRUD";
             Text = "Form2";
+            Load += PacienteCRUD_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -127,5 +151,7 @@
         private Button BtnActualizar;
         private Button BtnEliminar;
         private Button BtnCerrar;
+        private Label LblRegistros;
+        private Label LblTextoRegistro;
     }
 }
